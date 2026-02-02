@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Batchu Mardhav Naga Sai — Portfolio</title>
+  <meta name="description" content="Portfolio of Batchu Mardhav Naga Sai, Web Development Intern based in Chennai." />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="site-header" role="banner" id="home">
+
+    <nav class="top-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+
+    <div class="container hero">
+
+      <figure class="avatar-wrap">
+        <img
+          src="Images/Media.jpg"
+          alt="Profile photo of Batchu Mardhav Naga Sai"
+          class="avatar-img"
+        />
+      </figure>
+
+      <div class="hero-content">
+        <h1>Batchu Mardhav Naga Sai</h1>
+        <p class="subtitle">SDE Intern · Chennai</p>
+
+        <ul class="quick-meta">
+          <li>Frontend · Backend</li>
+          <li>HTML · CSS · JavaScript</li>
+          <li>Open to Opportunities</li>
+        </ul>
+
+        <nav class="actions" aria-label="Primary actions">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="mailto:batchu.sai@bounteous.com" class="btn">Email</a>
+          <a href="https://github.com/Mardhav-B" class="btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" class="btn">Resume</a>
+        </nav>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title" class="section-title">About Me</h2>
+
+      <div class="about-box">
+        <p>
+          I’m a web development intern focused on building clean, responsive,
+          and accessible web interfaces.
+        </p>
+        <p>
+          I enjoy learning modern technologies and turning ideas into
+          practical projects.
+        </p>
+
+        <ul class="about-list">
+          <li><strong>Location:</strong> Chennai, India</li>
+          <li><strong>Email:</strong> batchu.sai@bounteous.com</li>
+          <li><strong>Skills:</strong> HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <h3>Task Tracker App</h3>
+          <p>A simple to-do app with local storage and clean UI.</p>
+          <ul class="tech-list">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>Responsive Portfolio</h3>
+          <p>Portfolio built using semantic HTML and mobile-first design.</p>
+          <ul class="tech-list">
+            <li>Responsive</li><li>Accessibility</li><li>CSS Grid</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>Dashboard UI</h3>
+          <p>Static dashboard with reusable layout components.</p>
+          <ul class="tech-list">
+            <li>UI Design</li><li>Flexbox</li><li>Prototyping</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>© <span id="year"></span> Batchu Mardhav Naga Sai · Chennai</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
