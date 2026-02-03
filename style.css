@@ -11,15 +11,40 @@
   --radius: 14px;
   --maxw: 1100px;
   --gap: 18px;
+
+  --badge-bg: #fff2e0;
+  --badge-text: #2d2d2d;
+  --btn-bg: linear-gradient(180deg, #fff2e0, #f3e6da);
+  --btn-text: #2d2d2d;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --panel: #1e1e1e;
+  --text: #f1f1f1;
+  --muted: #b0b0b0;
+  --primary: #f3a55b;
+  --primary-strong: #d18b4a;
+  --accent: #f3c07c;
+  --border: #2a2a2a;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+  --badge-bg: #2a2a2a;
+  --badge-text: #f1f1f1;
+  --btn-bg: #2a2a2a;
+  --btn-text: #f1f1f1;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 html, body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
+
 a {
   color: var(--primary);
   text-decoration: none;
@@ -27,6 +52,7 @@ a {
 a:hover, a:focus {
   color: var(--primary-strong);
 }
+
 img { max-width: 100%; display: block; }
 
 .container {
@@ -73,6 +99,7 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: var(--gap);
+  transition: background 0.3s, color 0.3s;
 }
 
 .avatar-wrap {
@@ -110,11 +137,12 @@ img { max-width: 100%; display: block; }
 }
 
 .quick-meta li {
-  background: #fff2e0;
+  background: var(--badge-bg);
+  color: var(--badge-text);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 13px;
-  color: var(--text);
+  transition: background 0.3s, color 0.3s;
 }
 
 .btn {
@@ -122,12 +150,12 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 6px;
   padding: 10px 14px;
-  background: linear-gradient(180deg, #fff2e0, #f3e6da);
+  background: var(--btn-bg);
+  color: var(--btn-text);
   border: 1px solid var(--border);
-  color: var(--text);
   border-radius: 10px;
   font-weight: 600;
-  transition: transform 0.1s, box-shadow 0.2s;
+  transition: transform 0.1s, box-shadow 0.2s, background 0.3s, color 0.3s;
 }
 
 .btn.primary {
@@ -141,9 +169,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-section {
-  margin-top: 30px;
-}
+section { margin-top: 30px; }
 
 .section-title {
   font-size: 20px;
@@ -166,6 +192,7 @@ section {
   border-radius: var(--radius);
   padding: var(--gap);
   box-shadow: var(--shadow);
+  transition: background 0.3s, color 0.3s;
 }
 
 .about-box p {
@@ -196,7 +223,7 @@ section {
   border-radius: var(--radius);
   padding: var(--gap);
   box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s, color 0.3s;
 }
 
 .project-card:hover {
@@ -225,8 +252,8 @@ section {
 
 .tech-list li {
   font-size: 12px;
-  background: #fff2e0;
-  color: var(--text);
+  background: var(--badge-bg);
+  color: var(--badge-text);
   padding: 4px 8px;
   border-radius: 999px;
 }

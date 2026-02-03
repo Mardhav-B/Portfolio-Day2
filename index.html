@@ -44,7 +44,13 @@
           <a href="#projects" class="btn primary">View Projects</a>
           <a href="mailto:batchu.sai@bounteous.com" class="btn">Email</a>
           <a href="https://github.com/Mardhav-B" class="btn" target="_blank" rel="noopener">GitHub</a>
-          <a href="#" class="btn">Resume</a>
+          <a href="https://www.linkedin.com/in/mardhav-naga-sai-batchu-87505329a"
+             class="btn"
+             target="_blank"
+             rel="noopener">
+            LinkedIn
+          </a>
+          <button id="theme-toggle" class="btn toggle-btn">Dark: Off</button>
         </nav>
       </div>
 
@@ -53,8 +59,8 @@
 
   <main class="container">
 
-    <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title" class="section-title">About Me</h2>
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
 
       <div class="about-box">
         <p>
@@ -74,8 +80,8 @@
       </div>
     </section>
 
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="section-title">Projects</h2>
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
 
       <div class="projects-grid">
 
@@ -108,12 +114,42 @@
 
   </main>
 
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer">
     <p>© <span id="year"></span> Batchu Mardhav Naga Sai · Chennai</p>
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const toggleBtn = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
+
+    function updateToggle(isDark) {
+      toggleBtn.textContent = isDark ? "Dark: On" : "Dark: Off";
+    }
+
+    if (savedTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+      updateToggle(true);
+    } else {
+      updateToggle(false);
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const isDark =
+        document.documentElement.getAttribute("data-theme") === "dark";
+
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        updateToggle(false);
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        updateToggle(true);
+      }
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
